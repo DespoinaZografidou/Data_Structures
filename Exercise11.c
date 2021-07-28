@@ -1,4 +1,4 @@
-/*Ζωγραφίδου Δέσποινα, 321/2016041 */
+/*Despina Zografidou, 321/2016041 */
 
 #include <stdio.h>
 #include <stdlib.h>

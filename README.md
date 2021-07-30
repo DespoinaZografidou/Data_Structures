@@ -13,6 +13,6 @@ Searial Searche Vs Binary Search
 Brute Force Search
 
 # Exercise21.c
-Recursive function for sum of digits
-Recursive function to check if the table is sorted by ascending order
-Recursive function for the Binary Search
+  - Recursive function for sum of digits
+  - Recursive function to check if the table is sorted by ascending order
+  - Recursive function for the Binary Search

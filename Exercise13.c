@@ -1,77 +1,77 @@
-/*Μέλη Ομάδας: Χατζηβασίλη Νίκη, 321/2016215
-               Ζωγραφίδου Δέσποινα, 321/2016041 */
+/*Despina Zografidou, 321/2016041 */
 
 #include <stdio.h>
 
-//sunarthsh anazhthshs sumboloseiras
+//Brute Force Search for a string
 int brute_force(char *f, int N, char *k, int M){
-    //*f: protupo keimeno
-    //N: megethos tou protupou keimenou
-    //*k: protupo pou psaxnw
-    //M: megethos tou protupou
+    //*f: the protype string
+    //N: the lenght of the protype string
+    //*k: the key string
+    //M: the lenght of the key string
 
     int i,j;
 
-    //epanalhpsh apo 0 mexri N-M(to protupo pou psaxnw na xwraei sto arxiko keimeno)
+    //loop from 0 to N-M (M is always smaller than N )
     for(i=0; i<N-M; i++){
-        j=0; //arxikopoihsh
+        j=0; 
 
-        //j<M: o metrhths j na mhn jepernaei to megethos tou protupou pou psaxnw
-        //f[i+j]==k[j]: diathrhsh i(thesh sto keimeno), se periptwsh pou to gramma ths lejhs einai idio me to gramma tou keimenou
+        //j<M: the counter j must be alway be smaller than the length of the key string 
+        //f[i+j]==k[j]: save i(positio on the string), in case that the letter of the key word is the same the letter of the protype word
         while(j<M && f[i+j]==k[j])
-              j++; //aujhsh kata 1 kathe fora sth lejh
+              j++; //move to the next letter
 
-        //periptwsh pou h lejh exei teleiswsei
+        //in case tha comprarisons of every letter of the key word are finished
         if (j == M)
-            return i; //epistrefei thn thesh tou prwtou grammatos ths lejhs sto keimeno
+            return i; //return from the first letter of key word
     }
-    //periptesh pou den uparxei
+    //if there is not the key word in the protype string
     return -1;
 }
 
 
 int main(){
 
-    char *phrase = "THE DATA AND THEIR STRUCTURES!"; //protupo keimeno
-    char *key = "THEIR"; //protupo1
-    char *key2 = "DATABASE"; //protupo2
+    char *phrase = "THE DATA AND THEIR STRUCTURES!"; //protype string
+    char *key = "THEIR"; //key word-string 1
+    char *key2 = "DATABASE"; //key word-string 2
 
     int N, M;
     int i = 0;
     int search;
 
-    //brhskw megethos protupou keimenou
+    //keep the length of the protype string
     while(phrase[i]!='\0'){
         i++;
     }
 
-    N = i; //arxikopoihsh protupou keimenou
+    N = i; //save the length of the protype string
     i = 0;
 
-    //brhskw megethos protuphs lejhs
+    //keep the length of the key string 1
     while(key[i]!='\0'){
         i++;
     }
 
-    M = i; //arxikopoihsh protuphs lejhs
+    M = i; //save the length of the key string 1
 
-    search = brute_force(phrase, N, key, M); //kalesma brute force
+    search = brute_force(phrase, N, key, M); 
 
     if(search == -1){
         printf("The keyword  %s  doesn't exist!\n", key);
     }
     else{
-        printf("Position of keyword  %s  is: %d\n", key, search); //emfanhsh theshs tou prwtou grammatos
+        printf("Position of keyword  %s  is: %d\n", key, search); 
     }
 
     N = i;
     i = 0;
 
+   //keep the length of the key string 2
     while(key2[i]!='\0'){
         i++;
     }
 
-    M = i;
+    M = i; //save the length of the key string 2
 
     search = brute_force(phrase, N, key2, M);
 

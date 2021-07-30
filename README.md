@@ -8,3 +8,4 @@ Serial Search
 
 
 # Exercise12.c
+Searial Searche Vs Binary Search
